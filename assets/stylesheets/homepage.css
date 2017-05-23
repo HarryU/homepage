@@ -1,64 +1,84 @@
 body {
-	font-family: Hack, monospace;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    font-family: Hack, monospace;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
 }
 
 body.night {
-	background: #bbdefb;
+    background: #fff;
 }
 
 body.day {
-	background: #bbdefb;
+    background: #bbdefb;
 }
 
 #mainbox {
-	margin: 1em;
-	outline-width: thick;
-	outline-color: #616161;
-	outline-style: dashed;
-	max-width: 75%;
+    margin: 1em;
+    outline-width: thick;
+    outline-color: #616161;
+    outline-style: dashed;
+    text-align: center;
 }
 
 #box-contents {
-	padding: 1em;
-	display: table-cell;
-	left: 0;
-	margin: auto;
-	text-align: left;
+    padding: 1em;
+    display: block;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
 }
 
 button {
-	margin-top: 1px;
-	margin-bottom: 1px;
-	font-family: Hack, monospace;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-family: Hack, monospace;
 }
 
 input {
-	min-width: 75%;
-	height: 3em;
+    min-width: 75%;
+    height: 3em;
 }
 
-.btn {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0px;
-	font-size: 1em;
-	background: #fff;
-	padding: 0px 5px 0px 5px;
-	border: solid #616161 2px;
-	text-decoration: none;
-}
-
-.btn:hover {
-	background: #82b1ff;
-	text-decoration: none;
+img.centered {
+    display: block;
+    margin: auto;
 }
 
 div.reddit {
-	max-width: 35%;
-	margin-right: auto;
-	margin-left: 5%;
+    max-width: 35%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+.btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    font-size: 1em;
+    background: #fff;
+    padding: 0 5px 0 5px;
+    border: solid #616161 2px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #82b1ff;
+    text-decoration: none;
+}
+
+div.centered {
+    text-align: center;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.image_size {
+    max-height: 400px;
+    max-width: 750px;
+    height: auto;
+    width: auto;
 }
