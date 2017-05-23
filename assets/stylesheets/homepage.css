@@ -1,55 +1,64 @@
+body {
+	font-family: Hack, monospace;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 body.night {
-    font-family: Hack, monospace;
-    background: url(../images/night-background.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;;
+	background: #bbdefb;
 }
 
 body.day {
-    font-family: Hack, monospace;
-    background: url(../images/day-background.jpg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	background: #bbdefb;
 }
 
-div.video { 
-		margin-left: auto;
-		margin-right: auto;
-		width: 1280;
+#mainbox {
+	margin: 1em;
+	outline-width: thick;
+	outline-color: #616161;
+	outline-style: dashed;
+	max-width: 75%;
 }
 
-ul.topnav {
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    margin-left: 35%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0);
-    width: 30%;
+#box-contents {
+	padding: 1em;
+	display: table-cell;
+	left: 0;
+	margin: auto;
+	text-align: left;
 }
 
-ul.topnav li {
-    display: block;
+button {
+	margin-top: 1px;
+	margin-bottom: 1px;
+	font-family: Hack, monospace;
 }
 
-ul.topnav li a {
-    display: block;
-    color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
+input {
+	min-width: 75%;
+	height: 3em;
 }
 
-ul.topnav li a:hover {
-	color: rgba(0, 0, 0, 1.0);
-	background-color: rgba(255, 255, 255, 0.4);
+.btn {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0px;
+	font-size: 1em;
+	background: #fff;
+	padding: 0px 5px 0px 5px;
+	border: solid #616161 2px;
+	text-decoration: none;
 }
 
-ul.topnav li.icon {display: none;
+.btn:hover {
+	background: #82b1ff;
+	text-decoration: none;
+}
+
+div.reddit {
+	max-width: 35%;
+	margin-right: auto;
+	margin-left: 5%;
 }
