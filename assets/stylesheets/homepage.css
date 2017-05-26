@@ -8,19 +8,22 @@ body {
 }
 
 body.night {
-    background: #fff;
+    background: #37474f;
+		color: #ffff8d;
 }
 
 body.day {
     background: #bbdefb;
+		color: #000;
 }
 
-#mainbox {
+#mainbox{
     margin: 1em;
     outline-width: thick;
-    outline-color: #616161;
     outline-style: dashed;
     text-align: center;
+		margin: auto;
+		max-width: 50%;
 }
 
 #box-contents {
@@ -29,7 +32,6 @@ body.day {
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    text-align: justify;
 }
 
 button {
@@ -48,11 +50,6 @@ img.centered {
     margin: auto;
 }
 
-div.reddit {
-    max-width: 35%;
-    margin-left: 5%;
-    margin-right: auto;
-}
 
 .btn {
     -webkit-border-radius: 0;
@@ -61,7 +58,6 @@ div.reddit {
     font-size: 1em;
     background: #fff;
     padding: 0 5px 0 5px;
-    border: solid #616161 2px;
     text-decoration: none;
 }
 
@@ -70,10 +66,32 @@ div.reddit {
     text-decoration: none;
 }
 
+button.day {
+    border: solid #616161 2px;
+}
+
+button.night {
+    border: solid #ffff8d 2px;
+}
+
 div.centered {
-    text-align: center;
+    text-align: centre;
     margin: 0 auto;
-    width: 75%;
+    width: 100%;
+}
+
+div.reddit {
+    max-width: 35%;
+    margin-left: 5%;
+    margin-right: auto;
+}
+
+div.night {
+	outline-color: #ffff8d;
+}
+
+div.day {
+	outline-color: #616161;
 }
 
 .image_size {
