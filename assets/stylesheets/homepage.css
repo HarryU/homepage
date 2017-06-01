@@ -1,89 +1,125 @@
 body {
-    font-family: Hack, monospace;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
-}
-
-body.night {
-    background: #37474f;
-		color: #ffff8d;
+	font-family: Hack, monospace;
+	text-align: center;
 }
 
 body.day {
-    background: #bbdefb;
-		color: #000;
+	background: #bbdefb;
+	color: #000;
+}
+
+#bg.night {
+	width: 100vw;
+	height: 100vh;
+	background: url("../images/night-back.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;	
+	color: #ffff8d;
+}
+.night.animated {
+	-webkit-animation: filter-animation 6s infinite;
+	animation: filter-animation 6s infinite;
+}
+
+@-webkit-keyframes filter-animation {
+	0% {
+		-webkit-filter: hue-rotate(0deg);
+	}
+	50% {
+		-webkit-filter: hue-rotate(100deg);
+	}
+	100% {
+		-webkit-filter: hue-rotate(0deg);
+	}
+}
+
+@keyframes filter-animation {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(100deg);
+	}
+	100% {
+		filter: hue-rotate(0deg);
+	}
 }
 
 #mainbox{
-    margin: 1em;
-    outline-width: thick;
-    outline-style: dashed;
-    text-align: center;
-		margin: auto;
-		max-width: 50%;
+	margin: 1em;
+	outline-width: thick;
+	outline-style: dashed;
+	text-align: center;
+	margin: auto;
+	max-width: 50%;
 }
 
 #box-contents {
-    padding: 1em;
-    display: block;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
+	padding: 1em;
+	display: block;
+	left: 0;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 button {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    font-family: Hack, monospace;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	font-family: Hack, monospace;
 }
 
 input {
-    min-width: 75%;
-    height: 3em;
+	min-width: 75%;
+	height: 3em;
 }
 
 img.centered {
-    display: block;
-    margin: auto;
+	display: block;
+	margin: auto;
 }
 
 
 .btn {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    font-size: 1em;
-    background: #fff;
-    padding: 0 5px 0 5px;
-    text-decoration: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	font-size: 1em;
+	padding: 0 5px 0 5px;
+	text-decoration: none;
 }
 
-.btn:hover {
-    background: #82b1ff;
-    text-decoration: none;
+.btn.day:hover {
+	background: #82b1ff;
+	text-decoration: none;
+}
+
+.btn.night:hover {
+	background: #414164;
 }
 
 button.day {
-    border: solid #616161 2px;
+	border: solid #616161 2px;
+	background: #fff; 
+	color: #616161;
 }
 
 button.night {
-    border: solid #ffff8d 2px;
+	border: solid #ffff8d 2px;
+	background: #19193c;
+	color: #ffff8d;
 }
 
 div.centered {
-    text-align: centre;
-    margin: 0 auto;
-    width: 100%;
+	text-align: centre;
+	margin: 0 auto;
+	width: 100%;
 }
 
 div.reddit {
-    max-width: 35%;
-    margin-left: 5%;
-    margin-right: auto;
+	max-width: 35%;
+	margin-left: 5%;
+	margin-right: auto;
 }
 
 div.night {
@@ -95,8 +131,8 @@ div.day {
 }
 
 .image_size {
-    max-height: 400px;
-    max-width: 750px;
-    height: auto;
-    width: auto;
+	max-height: 400px;
+	max-width: 750px;
+	height: auto;
+	width: auto;
 }

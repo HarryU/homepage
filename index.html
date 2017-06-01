@@ -12,41 +12,43 @@
 		<link rel="stylesheet" href="assets/stylesheets/homepage.css?v=3">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	</head>
-	<body>
-		<script src='js/reddit_image_display.js?v=2'></script>
-		<img class="image_size centered" id="image"/>
-		<div class="centered">
-			<h3 id="clock">
-				<time id="time">20:00:00</time>
-			</h3>
-		</div>
-		<div id="mainbox">
-			<div id="box-contents" class="centered">
-				<span>Internal links:</span>
-				<a href="https://153.duckdns.org/transmission"><button class="btn" type="button" name="button">Transmission</button></a>
-				<a href="https://153.duckdns.org/guac"><button class="btn" type="button" name="button">Guacamole</button></a>
-				<a href="https://freenas.153.duckdns.org/"><button class="btn" type="button" name="button">FreeNAS</button></a>
-				<br>
-				<br>
-				<span>Server:</span>
-				<a href="https://github.com/HarryU/VimConfig"><button class="btn" type="button" name="button">Vim Config</button></a>
-				<a href="https://github.com/HarryU/web-server"><button class="btn" type="button" name="button">Webserver Config</button></a>
-				<br>
+	<div id="bg">
+		<body>
+			<script src='js/reddit_image_display.js?v=2'></script>
+			<img class="image_size centered" id="image"/>
+			<div class="centered">
+				<h3 id="clock">
+					<time id="time">20:00:00</time>
+				</h3>
 			</div>
-		</div>
-		<br>	
-		<br>	
+			<div id="mainbox">
+				<div id="box-contents" class="centered">
+					<span>Internal links:</span>
+					<a href="https://153.duckdns.org/transmission"><button class="btn" type="button" name="button">Transmission</button></a>
+					<a href="https://153.duckdns.org/guac"><button class="btn" type="button" name="button">Guacamole</button></a>
+					<a href="https://freenas.153.duckdns.org/"><button class="btn" type="button" name="button">FreeNAS</button></a>
+					<br>
+					<br>
+					<span>Server:</span>
+					<a href="https://github.com/HarryU/VimConfig"><button class="btn" type="button" name="button">Vim Config</button></a>
+					<a href="https://github.com/HarryU/web-server"><button class="btn" type="button" name="button">Webserver Config</button></a>
+					<br>
+				</div>
+			</div>
+			<br>	
+			<br>	
 			<form method="post" action="https://search.153.duckdns.org/">
-					<input type="search" class="centered" placeholder="Find all the things" autocomplete="on" value="">
+				<input type="search" class="centered" placeholder="Find all the things" autocomplete="on" value="">
 			</form>
 			<br>
-		<div>
 			<div>
-				<div class="reddit">
-					<script src="https://www.reddit.com/r/DataHoarder+HomeServer+homelab+selfhosted/.embed?limit=20&t=week&bordercolor=616161&twocolumn=true"
-						 type="text/javascript"></script>
+				<div>
+					<div class="reddit">
+						<script src="https://www.reddit.com/r/DataHoarder+HomeServer+homelab+selfhosted/.embed?limit=20&t=week&bordercolor=616161&twocolumn=true"
+							type="text/javascript"></script>
+					</div>
+					<script type="text/javascript" src="js/time_check.js"></script>
+					<script src="js/class_change_by_time.js?v=4"></script>
+		</body>
 				</div>
-				<script type="text/javascript" src="js/time_check.js"></script>
-		<script src="js/class_change_by_time.js?v=2"></script>
-	</body>
 </html>
