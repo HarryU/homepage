@@ -3,6 +3,7 @@ var c = canvas[0].getContext("2d");
 
 var lettuce_path = "assets/images/lettuce1600.png";
 var tomato_path = "assets/images/tomato.png";
+var onion_path = "assets/images/onion.png";
 
 var images = new Array();
 
@@ -11,6 +12,7 @@ var loop = setInterval(function() {
 	c.fillRect(0, 0, 500, 500);
 	DrawRectangle('lightgreen', 50, 50, 100, 100);
 	DrawRectangle('red', 150, 50, 100, 100);
+    DrawRectangle('purple', 250, 50, 100, 100);
 	for (var i =  0; i < images.length; i++) {
 		images[i].update();
 	}
@@ -23,10 +25,14 @@ var dragging = false;
 canvas.mousemove(function(e) {
 	mouseX = e.offsetX;
 	mouseY = e.offsetY;
-})
+});
 
 $(document).mousedown(function() {
 	mousePressed = true;
+    if (mouseX < 350 && mouseX > 250 && mouseY < 150 && mouseY > 50) {
+        new_img = new DragImage(onion_path, mouseX, mouseY);
+        images.push(new_img);
+    }
 	if (mouseX < 250 && mouseX > 150 && mouseY < 150 && mouseY > 50) {
 		new_img = new DragImage(tomato_path, mouseX, mouseY);
 		images.push(new_img);
