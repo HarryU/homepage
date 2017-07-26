@@ -1,21 +1,26 @@
 body {
+	position: absolute;
+	left:0;
+	right:0;
 	font-family: Hack, monospace;
 	text-align: center;
 }
 
 body.day {
 	background: #bbdefb;
-	color: #000;
+	color: #414141;
 }
 
 #bg.night {
 	width: 100vw;
 	height: 100vh;
-	background: url("../images/night-back.jpg");
-	background-position: center;
-	background-repeat: no-repeat;
+	background:url("../images/night-back.jpg") no-repeat center;
 	background-size: cover;	
+	z-index: -1;
 	color: #ffff8d;
+	position: absolute;
+	left:0;
+	right:0;
 }
 .night.animated {
 	-webkit-animation: filter-animation 6s infinite;
