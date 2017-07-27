@@ -5,10 +5,10 @@ import collections
 from bokeh.plotting import figure, save, output_file
 
 colours = {'Rich':"yellow",
-	   'Harry':'blue',
-	   'Jack':'magenta',
-           'Mike':'green',
-	   'Bekki':'orange',
+           'Harry':'blue',
+           'Jack':'green',
+           'Mike':'magenta',
+           'Bekki':'red',
            'Jones':'black'}
 full_distance = 2729.6
 
@@ -24,7 +24,7 @@ def get_csv():
 	except IndexError:
 		return None
 def draw_plot(distances):
-	to_draw=[]	
+	to_draw = []
 	for name, riders in distances.items():
 		for rider in riders:
 			position, _, rider_name, _,_,dtf,next_control,nckm,trackkm,routekm,av_track,av_speed,_ = rider
@@ -37,7 +37,7 @@ def draw_plot(distances):
 		draw_distance = full_distance - distance
 		dot.segment(0,rider,draw_distance,rider,line_width=2, line_color=colours[name])
 		dot.circle(draw_distance,rider,size=5,fill_color=colours[name], line_color=colours[name],line_width=3, )
-	output_file("leaderboard.html")
+	output_file("/home/ubuntu/leaderboard.html")
 	save(dot)
 
 
@@ -48,7 +48,7 @@ def get_names_from_csv(csv):
 	'Harry':[118,162,22,159,125],
 	'Mike':[106,105,169,222,117],
 	'Jones':[165,81,33,85,44]}
-	
+
 	actual_data = collections.defaultdict(list)
 	for name,riders in data.items():
 		for rider in riders:
