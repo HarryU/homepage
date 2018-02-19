@@ -96,14 +96,6 @@ div.reddit {
 	margin-right: auto;
 }
 
-div.night {
-	outline-color: #ffff8d;
-}
-
-div.day {
-	outline-color: #616161;
-}
-
 .image_size {
 	max-height: 400px;
 	max-width: 750px;
