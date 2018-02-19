@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!doctype html>
 <html>
 	<head>
 		<meta http-equiv="cache-control" content="max-age=0"/>
@@ -10,52 +10,57 @@
 		<title>153 Oakwood Drive</title>
 		<link rel="stylesheet" href='//cdn.jsdelivr.net/font-hack/2.020/css/hack-extended.min.css'>
 		<link rel="stylesheet" href="assets/stylesheets/homepage.css?v=3">
+		<link rel="stylesheet" href="assets/stylesheets/elusive-icons/css/elusive-icons.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="https://www.w3schools.com/lib/w3.js"></script> 
 	</head>
 	<div id="bg"></div>
 	<body>
-		<script src='js/reddit_image_display.js?v=2'></script>
-		<img class="image_size centered" id="image"/>
-		<div class="centered">
-			<h3 id="clock">
-				<time id="time">20:00:00</time>
-			</h3>
-			<h4>
-				<div w3-include-html="scripts/speedtest_results.html?v=2" class="mainbox"></div>
-			</h4>
-			<br>
-		</div>
+		<h1 id="title">Harry Uzzell</h1>
 		<div id="mainbox">
-			<div id="box-contents" class="centered">
-				<span>Internal links:</span>
-				<a href="https://153.duckdns.org/transmission"><button class="btn" type="button" name="button">Transmission</button></a>
-				<a href="https://153.duckdns.org/guac"><button class="btn" type="button" name="button">Guacamole</button></a>
-				<a href="https://freenas.153.duckdns.org/"><button class="btn" type="button" name="button">FreeNAS</button></a>
-				<br>
-				<br>
-				<span>Server:</span>
-				<a href="https://github.com/HarryU/VimConfig"><button class="btn" type="button" name="button">Vim Config</button></a>
-				<a href="https://github.com/HarryU/web-server"><button class="btn" type="button" name="button">Webserver Config</button></a>
-				<br>
+			<div id="box-contents">
+				<div class="tab">
+					<button class="btn tablinks" name="button" onclick="open_tab(event, 'about')"  id="defaultOpen">About Me</button>
+					<button class="btn tablinks" name="button" onclick="open_tab(event, 'projects')">Notable Projects</button>
+				</div>
+				<div id="about" class="tabcontent">
+					<h2>About Me</h2>
+					<p style="text-align:left">
+					I'm a software developer, currently working in the Computer Vision group at <a href="https://www.roke.co.uk">Roke Manor Research Ltd.</a>
+					Since graduating with a MSci in Physics, I have worked on a diverse range of projects, supporting both defence and commercial customers in finding novel solutions to their challenging problems.
+					</p>
+					<p style="text-align:left">
+					I have experience working in both Python and C++, using Git for version control, and platforms such as Gitlab and Jenkins to manage Continuous Integration and Delivery of software.
+					I am confident in developing for both Windows and Linux, preferring to use Linux where possible. While happy to work under any project methodology, I am most comfortable working as part of an Agile or Lean team. In my current role, I regularly contribute to project planning and bidding, as well as supporting business development work.
+					</p>
+				</div>
+				<div id="projects" class="tabcontent">
+					<h2>Notable Projects</h2>
+					<ul class="square">
+						<li><a href="automatedinspection">Automated Industrial Inspection</a></li>
+						<li><a href="autonomousboat">Object and Horizon Detection and Tracking at Sea</li>
+						<li><a href="highspeedtracking">High Speed Projectile Tracking</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<br>
 		<br>
-		<script type="application/javascript">w3.includeHTML();</script>
-		<form method="post" action="https://search.153.duckdns.org/">
-			<input type="search" class="centered" placeholder="Find all the things..." autocomplete="on" value="">
-		</form>
-		<br>
-		<div>
-			<div>
-				<div class="reddit">
-					<script src="https://www.reddit.com/r/DataHoarder+HomeServer+homelab+selfhosted/.embed?limit=20&t=week&bordercolor=616161&twocolumn=true"
-					type="text/javascript"></script>
-				</div>
-				<script type="text/javascript" src="js/time_check.js"></script>
-				<script src="js/class_change_by_time.js?v=4" type="application/javascript"></script>
+		<div class="row">
+			<div class="column">
+				<a href="https://www.linkedin.com/in/harry-uzzell"><i class="el el-linkedin el-4x"></i></a>
 			</div>
-        </div>
+			<div class="column">
+				<a href="https://github.com/HarryU"><i class="el el-github el-4x"></i></a>
+			</div>
+			<div class="column">
+				<a href="mailto:hmucs@yahoo.co.uk"><i class="el el-envelope-alt el-4x"></i></a>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<script src="js/class_change_by_time.js?v=4" type="application/javascript"></script>
+		<script src="js/open_tab.js?v=3" type="application/javascript"></script> 
 	</body>
 </html>
