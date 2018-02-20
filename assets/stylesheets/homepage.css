@@ -23,11 +23,12 @@ body.night {
 	font-size: 5em;
 }
 
-#mainbox{
+#mainbox {
 	outline: thick dashed;
 	text-align: left;
 	margin: auto;
-	max-width: 60%;
+	max-width: 60vw;
+	min-height: 40vh;
 }
 
 #box-contents {
@@ -48,6 +49,7 @@ body.night {
 button {
 	margin-top: 3px;
 	margin-bottom: 3px;
+	margin-right: -12px;
 }
 
 input {
@@ -56,20 +58,17 @@ input {
 }
 
 .btn {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
 	font-size: 1em;
-	padding: 0 5px 0 5px;
+	padding: 10px 15px 10px 15px;
 	text-decoration: none;
 }
 
 .btn.day:hover {
-	background: #82b1ff;
+	background: #bbdefb;
 }
 
 .btn.night:hover {
-	background: #414164;
+	background: #5a6e7d;
 }
 
 button.day {
@@ -90,17 +89,12 @@ div.centered {
 	width: 100%;
 }
 
-div.reddit {
-	max-width: 35%;
-	margin-left: 5%;
-	margin-right: auto;
+.tab {
+	overflow: hidden;
 }
 
-.image_size {
-	max-height: 400px;
-	max-width: 750px;
-	height: auto;
-	width: auto;
+.square {
+	list-style-type: square;
 }
 
 .container {
@@ -143,14 +137,6 @@ div.reddit {
 	opacity: 1;
 	transition: opacity 1s;
 	-moz-transition: opacity 1s;
-}
-
-.tab {
-	overflow: hidden;
-}
-
-.square {
-	list-style-type: square;
 }
 
 a:not(.icon) {
