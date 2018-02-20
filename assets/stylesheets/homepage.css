@@ -134,8 +134,15 @@ div.reddit {
 }
 
 .row .column a:not(:hover) {
-	opacity:.5;
-	transition: opacity .5s;
+	opacity: 0.6;
+	transition: opacity 1s;
+	-moz-transition: opacity 1s;
+}
+
+.row .column a:hover {
+	opacity: 1;
+	transition: opacity 1s;
+	-moz-transition: opacity 1s;
 }
 
 .tab {
@@ -146,15 +153,29 @@ div.reddit {
 	list-style-type: square;
 }
 
-a {
+a:not(.icon) {
 	outline: none;
 	text-decoration: none;
 }
 
-a:link {
-	color: White;
+a:not(.icon):link {
+	color: Blue;
+	font-style: italic
 }
 
-a:visited {
+a:not(.icon):visited {
+	color: Purple;
+	font-style: italic
+}
+
+a.github {
 	color: Black;
+}
+
+a.linkedin {
+	color: Blue;
+}
+
+a.envelope {
+	color: White;
 }
