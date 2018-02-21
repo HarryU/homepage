@@ -19,11 +19,19 @@
 			<div id="box-contents">
 				<h1>Object and Horizon Detection and Tracking on an Autonomous Boat</h1>
 				<p>
+		<img src="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/image_data/file/57374/s300_MAST_Dolphin-GOV.UK.jpg" alt="MAST platform - Bladerunner" style="float: right; margin: 0px 0px 0px 20px"></img>
 				I worked on the Defense research project developing the Maritime Autonomy Surface Testbed (MAST) system.
-				I was responsible for developing detection and tracking algorithms to inform the obstacle avoidance and route planning algorithms.
-				Using a <a href="https://www.ptgrey.com/ladybug5-360-degree-usb3-spherical-camera-systems">FLIR 360&deg camera</a>, we were able to detect, localise and track objects at up to 100m range.
+				I was responsible for developing detection and tracking algorithms to inform the obstacle avoidance and
+				route planning algorithms.
+				Using a <a href="https://www.ptgrey.com/ladybug5-360-degree-usb3-spherical-camera-systems">FLIR 360&deg camera</a>,
+				we were able to detect, localise and track objects at up to 100m range.
 				</p>
-				<br>
+				<p>
+				We also developed a horizon tracking algorithm which enabled estimation of the boat's roll and pitch.
+				This was used to inform the range estimation of detected objects, using the camera calibration to cast
+				a ray from the camera's location to the sea surface.
+				</p>
+				<br />
 			</div>
 		</div>
 		<script src="js/class_change_by_time.js?v=4" type="application/javascript"></script>
