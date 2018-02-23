@@ -21,6 +21,7 @@ body.night {
 #title {
 	font-family: Polya;
 	font-size: 5em;
+	margin-top: 5px;
 }
 
 #mainbox {
@@ -28,7 +29,7 @@ body.night {
 	text-align: left;
 	margin: auto;
 	max-width: 60vw;
-	min-height: 40vh;
+	min-height: 50vh;
 }
 
 #box-contents {
