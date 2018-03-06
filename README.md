@@ -5,5 +5,5 @@ To host the website, set up a webserver (i.e. as in (web-server)[https://github.
 I.e. by default on debian based systems this would be:
 
 ```bash
-ln -s ./* /var/www/html
+sudo ln -s $PWD/html /var/www
 ```
