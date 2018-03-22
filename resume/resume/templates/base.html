@@ -1,0 +1,16 @@
+<!doctype html>
+<title>Harry Uzzell</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename="elusive-icons/css/elusive-icons.min.css") }}">
+<body class="day">
+  <div class=page>
+    <div class=metanav>
+      {% if not session.logged_in %}
+      <a href="{{ url_for('login') }}">Log In</a>
+      {% else %}
+      <a href="{{ url_for('logout') }}">Log Out</a>
+      {% endif %}
+    </div>
+    {% block body %}{% endblock %}
+  </div>
+</body>

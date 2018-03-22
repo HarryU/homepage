@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body %}
+<h1 id="title">Harry Uzzell</h1>
+<div id="mainbox">
+  <div id="box-contents">
+    <div class="tab">
+      <form>
+        <button class="btn tablinks" formaction="{{ url_for('about') }}"  id="defaultOpen">About Me</button>
+        <button class="btn tablinks" formaction="{{ url_for('projects') }}">Notable Projects</button>
+        <button class="btn tablinks" formaction="{{ url_for('hobbies') }}">Hobbies and Interests</button>
+      </form>
+    </div>
+    <div id="about" class="tabcontent">
+      {% block about %}{% endblock %}
+    </div>
+    <div id="projects" class="tabcontent">
+      {% block projects %}{% endblock %}
+    </div>
+    <div id="hobbies" class="tabcontent">
+      {% block hobbies %}{% endblock %}
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="row">
+  <div class="column">
+    <a class="icon linkedin" href="https://www.linkedin.com/in/harry-uzzell"><i class="el el-linkedin el-4x"></i></a>
+  </div>
+  <div class="column">
+    <a class="icon github" href="https://github.com/HarryU"><i class="el el-github el-4x"></i></a>
+  </div>
+  <div class="column">
+    <a class="icon envelope" href="mailto:hmucs@yahoo.co.uk"><i class="el el-envelope-alt el-4x"></i></a>
+  </div>
+</div>
+<br>
+<br>
+<br>
+{% endblock %}

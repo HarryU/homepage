@@ -1,0 +1,13 @@
+MANIFEST.in
+resume/__init__.py
+resume/resume.py
+resume/schema.sql
+resume.egg-info/PKG-INFO
+resume.egg-info/SOURCES.txt
+resume.egg-info/dependency_links.txt
+resume.egg-info/requires.txt
+resume.egg-info/top_level.txt
+resume/templates/base.html
+resume/templates/index.html
+resume/templates/project.html
+resume/templates/startpage.html

@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block projects %}
+<h2>Notable Projects</h2>
+<ul class="square">
+  <li><a href="{{ url_for('automatedinspection') }}">Automated Industrial Inspection</a></li>
+  <li><a href="{{ url_for('autonomousboat') }}">Object and Horizon Detection and Tracking at Sea</li>
+  <li><a href="{{ url_for('highspeedtracking') }}">High Speed Projectile Tracking</a></li>
+</ul>
+{% endblock %}

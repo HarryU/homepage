@@ -1,0 +1,3 @@
+graft resume/templates
+graft resume/static
+include resume/schema.sql
