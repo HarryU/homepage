@@ -38,7 +38,6 @@ def get_db():
 def add_user(username, password):
     db = get_db()
     username_exists = db.execute('select exists(select 1 from users where username=? limit 1)', [username]).rowcount == 1
-    print(username_exists)
     if not username_exists:
         hashed_password = generate_password_hash(password)
         db.execute('insert into users (username, passwd_hash) values (?, ?)', [username, hashed_password])
@@ -62,14 +61,19 @@ def get_hashed_password(db, username):
     cur = db.execute('select passwd_hash from users where username=?', [username])
     return cur.fetchone()
 
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'sqlite_db'):
+        g.sqlite_db.close()
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
     if request.method == 'POST':
         db = get_db()
         username = request.form['username']
-        username_exists = db.execute('select exists(select 1 from users where username=? limit 1)', [username]).rowcount == 1
-        if not username_exists:
+        username_exists = len(db.execute('select exists(select 1 from users where username=?)', [username]).fetchall()) > 0
+        if username_exists:
             hashed_password = get_hashed_password(db, username)[0]
             password = request.form['password']
             password_matches = check_password_hash(hashed_password, password)
@@ -88,11 +92,6 @@ def logout():
     session.pop('logged_in', None)
     flash('You have been logged out.')
     return redirect(url_for('index'))
-
-@app.teardown_appcontext
-def close_db(error):
-    if hasattr(g, 'sqlite_db'):
-        g.sqlite_db.close()
 
 @app.route('/')
 def index():
@@ -127,3 +126,22 @@ def autonomousboat():
 @app.route('/highspeedtracking')
 def highspeedtracking():
     return render_template('highspeedtracking.html')
+
+@app.route('/blog')
+def blog():
+    db = get_db()
+    cur = db.execute('select title, text from blogposts order by id desc')
+    entries = cur.fetchall()
+    return render_template('blog.html', entries=entries)
+
+@app.route('/blog/new', methods=['POST'])
+def new_post():
+    if not session.get('logged_in'):
+        abort(401)
+    db = get_db()
+    title = request.form['title']
+    text = request.form['text']
+    db.execute('insert into blogposts (title, text) values (?, ?)', [title, text])
+    db.commit()
+    flash('New post "{}" added to blog'.format(title))
+    return redirect(url_for('blog'))
