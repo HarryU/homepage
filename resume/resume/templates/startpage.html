@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block title %}
+<h1 id="title">Homepage</h1>
+<div class="centered">
+  <h3 id="clock">
+    <time id="time">20:00:00</time>
+  </h3>
+  <br>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='time_check.js') }}"></script>
+{% endblock %}
+{% block mainbox %}
+<span>Internal links:</span>
+<a href="https://153.duckdns.org/transmission"><button class="btn" type="button" name="button">Transmission</button></a>
+<a href="https://153.duckdns.org/guac"><button class="btn" type="button" name="button">Guacamole</button></a>
+<a href="https://freenas.153.duckdns.org/"><button class="btn" type="button" name="button">FreeNAS</button></a>
+<br>
+<br>
+<span>Server:</span>
+<a href="https://github.com/HarryU/VimConfig"><button class="btn" type="button" name="button">Vim Config</button></a>
+<a href="https://github.com/HarryU/web-server"><button class="btn" type="button" name="button">Webserver Config</button></a>
+<br>
+{% endblock %}

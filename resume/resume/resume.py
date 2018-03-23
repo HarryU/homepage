@@ -1,7 +1,7 @@
 import os
 import sqlite3
 from flask import *
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -36,15 +36,23 @@ def get_db():
     return g.sqlite_db
 
 def add_user(username, password):
-    usernames = get_existing_usernames(get_db())
-    if username not in usernames:
+    db = get_db()
+    username_exists = db.execute('select exists(select 1 from users where username=? limit 1)', [username]).rowcount == 1
+    print(username_exists)
+    if not username_exists:
         hashed_password = generate_password_hash(password)
-        db.execute('insert into users (username, passwd_hash) values (?, ?)',
-                   [username, hashed_password])
+        db.execute('insert into users (username, passwd_hash) values (?, ?)', [username, hashed_password])
         db.commit()
-        flash('New user {} created.'.format(username))
+        print('New user "{}" created.'.format(username))
     else:
-        flash('User {} already exists.'.format(username))
+        print('User "{}" already exists.'.format(username))
+
+def remove_user(username):
+    db = get_db()
+    db.execute('delete from users where username=?', [username])
+    db.commit()
+    print('deleted user "{}"'.format(username))
+
 
 def get_existing_usernames(db):
     cur = db.execute('select username from users')
@@ -52,22 +60,34 @@ def get_existing_usernames(db):
 
 def get_hashed_password(db, username):
     cur = db.execute('select passwd_hash from users where username=?', [username])
-    flash(cur)
-    return cur.fetchall()
+    return cur.fetchone()
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
-    usernames = get_existing_usernames(get_db())
     if request.method == 'POST':
+        db = get_db()
         username = request.form['username']
-        if username in usernames:
-            hashed_password = get_hashed_password(username)
-            if check_password_hash(hashed_password, request.form['password']):
+        username_exists = db.execute('select exists(select 1 from users where username=? limit 1)', [username]).rowcount == 1
+        if not username_exists:
+            hashed_password = get_hashed_password(db, username)[0]
+            password = request.form['password']
+            password_matches = check_password_hash(hashed_password, password)
+            if password_matches:
                 session['logged_in'] = True
                 flash('Logged in as {}'.format(username))
-                return redirect(url_for(index))
+                return redirect(url_for('index'))
+            else:
+                error = "Invalid password for user {}".format(username)
+        else:
+            error = "Invalid username {}".format(username)
     return render_template('login.html', error=error)
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You have been logged out.')
+    return redirect(url_for('index'))
 
 @app.teardown_appcontext
 def close_db(error):
@@ -77,6 +97,12 @@ def close_db(error):
 @app.route('/')
 def index():
     return render_template('about.html')
+
+@app.route('/startpage')
+def startpage():
+    if not session.get('logged_in'):
+        return redirect(url_for('index'))
+    return render_template('startpage.html')
 
 @app.route('/about')
 def about():

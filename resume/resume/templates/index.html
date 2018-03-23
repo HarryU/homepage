@@ -1,24 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
-<h1 id="title">Harry Uzzell</h1>
+{% block title %}{% endblock %}
 <div id="mainbox">
   <div id="box-contents">
-    <div class="tab">
-      <form>
-        <button class="btn tablinks" formaction="{{ url_for('about') }}"  id="defaultOpen">About Me</button>
-        <button class="btn tablinks" formaction="{{ url_for('projects') }}">Notable Projects</button>
-        <button class="btn tablinks" formaction="{{ url_for('hobbies') }}">Hobbies and Interests</button>
-      </form>
-    </div>
-    <div id="about" class="tabcontent">
-      {% block about %}{% endblock %}
-    </div>
-    <div id="projects" class="tabcontent">
-      {% block projects %}{% endblock %}
-    </div>
-    <div id="hobbies" class="tabcontent">
-      {% block hobbies %}{% endblock %}
-    </div>
+    {% block mainbox %}{% endblock %}
   </div>
 </div>
 <br>
